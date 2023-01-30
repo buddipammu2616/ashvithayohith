@@ -53,6 +53,13 @@ pipeline{
             }
             
         }
+        stage('quality gate analysis') {
+            steps {
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-key'
+                }
+            }
+        }
         
     }
 }
