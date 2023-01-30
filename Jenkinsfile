@@ -42,7 +42,7 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-        stage('static code analysis') {
+        stage('sonarqube analysis') {
             steps {
                 script {
                   withSonarQubeEnv(credentialsId: 'sonar-key') {
